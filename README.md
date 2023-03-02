@@ -7,6 +7,7 @@
 #### Shortcuts and Hotkeys
 - Windows: 
     - [20 essential Windows keyboard shortcuts that will make you forget your mouse](https://www.popsci.com/windows-keyboard-shortcuts/)
+    - [Microsoft PowerToys: Utilities to customize Windows](https://learn.microsoft.com/en-us/windows/powertoys/)
 - Mac: 
     - [These useful Mac keyboard shortcuts will help you work faster and smarter](https://www.macworld.com/article/233064/10-most-useful-macos-keyboard-shortcuts.html)
     - [Full List](https://support.apple.com/en-ca/HT201236)
