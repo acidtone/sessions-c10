@@ -26,3 +26,21 @@
 - See: Git and GitHub slides in Basecamp
     - [Git and GitHub Basics](files/Tech%20Appendix%20-%20Git%20and%20GitHub%20Basics.pdf)
     - [Tech Appendix - Git Collaboration and Merge Conflicts](files/Tech%20Appendix%20-%20Git%20Collaboration%20and%20Merge%20Conflicts.pdf)
+
+### Apr 18 - Flexbox basics
+- Slides: [Flexbox navigation](https://acidtone.github.io/sessions-c10/html-css/flexbox-nav.html)
+- Sample Code:
+    - [Typical Vertical Navbar](https://codepen.io/browsertherapy/pen/XWjwJGL)
+    - [Flexbox Navigation Examples](https://codepen.io/browsertherapy/pen/YzqdGpR)
+    - [Common Flexbox Layout Patterns](https://codepen.io/browsertherapy/pen/oNYNXZO)
+        - Source: [Flexbox design patterns you can use in your projects](https://www.youtube.com/watch?v=vQAvjof1oe4)
+- Learning Resources:
+    - [Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+    - Article: [Create a navbar with CSS flexbox ](https://dev.to/jungjungie/create-a-navbar-with-css-flexbox-2leh)
+    - Sample Code: [Flexbox Navigation Examples](https://codepen.io/browsertherapy/pen/YzqdGpR)
+    - Videos:
+        - Jenn Simmons: [Flexbox vs. CSS Grid — Which is Better?](https://youtu.be/hs3piaN4b5I)
+        - Net Ninja: [Creating a Menu with Flexbox](https://www.youtube.com/watch?v=2plKBskaKfY)
+    - Learning games for Flexbox:
+        - [Flexbox Froggy](https://flexboxfroggy.com/)
+        - [Flexbox Zombies](https://mastery.games/flexboxzombies/)
