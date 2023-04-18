@@ -1,7 +1,12 @@
 ## Sessions - InceptionU Cohort 10
+
+---
+
 ### Feb 23 - Better Search Phrases
 - Slides:
     - [Better Search Phrases](https://acidtone.github.io/sessions-c10/misc/better-search-phrases.html)
+
+---
 
 ### Mar 2 - Dev Life
 #### Shortcuts and Hotkeys
@@ -22,10 +27,14 @@
     - [URLs and File Paths](https://acidtone.github.io/sessions-c10/misc/urls-file-paths.html)
 - [Session sample code](https://github.com/acidtone/dailies-c10/tree/main/2023-03-02-dev-life)
 
+---
+
 ### Mar 3 - Git and GitHub
 - See: Git and GitHub slides in Basecamp
     - [Git and GitHub Basics](files/Tech%20Appendix%20-%20Git%20and%20GitHub%20Basics.pdf)
     - [Tech Appendix - Git Collaboration and Merge Conflicts](files/Tech%20Appendix%20-%20Git%20Collaboration%20and%20Merge%20Conflicts.pdf)
+
+---
 
 ### Apr 18 - Flexbox basics
 - Slides: [Flexbox navigation](https://acidtone.github.io/sessions-c10/html-css/flexbox-nav.html)
