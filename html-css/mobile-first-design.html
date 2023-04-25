@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mobile-first Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/theme/sky.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.js"></script>
+    <style>
+      :root {
+        --r-heading-text-transform: small-caps;
+      }
+      body .reveal .slides {
+        font-size: 36px;
+        text-align: left;
+      }
+
+      body .reveal .slides h1 {
+        font-size: 3em;
+      }
+
+      body .reveal .slides h2 {
+        font-size: 2em;
+      }
+
+      h1, h2 {
+        text-align: center;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-variant: small-caps;
+        text-align: center;
+      }
+      h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+        font-variant: initial;
+      }
+      
+      dd {
+        margin-bottom: 2rem;
+      }
+
+      .reveal p > img {
+        display: block;
+        margin: auto;
+      }
+
+      .reveal pre code {
+        padding: 1rem;
+      }
+      .code {
+        font-family:'Courier New', Courier, monospace;
+        font-size: 2.5rem;
+        white-space: nowrap;
+        color: grey;
+      }
+      .code strong {
+        color: black;
+      }
+
+      .code.no-bullet {
+        list-style: none;
+        padding-left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+            # Mobile-first Design
+            ## Media queries and breakpoints
+
+            ---
+
+            ## CSS Cascade
+            ### The Style Referee
+
+            ---
+
+            If two CSS declarations affect the same element but they conflict, which one wins?
+
+            CSS:
+            ```css
+            body {
+              background: rebeccapurple;
+            }
+
+            body {
+              background: grey;
+            }
+            ```
+
+            ---
+
+            The cascade algorithm uses the following to decide which rules are applied when there's a conflict:
+
+            1. Source origin
+            2. Selector specificity
+            3. Order of appearance
+
+            ---
+
+            ## Source Origin
+            In _decreasing_ order of importance:
+            1. Inline `style` attribute
+                ```html
+                <p style="color: grey;"></p>
+                ```
+            2. Embedded `<style>` element
+                ```css
+                <style>
+                  p {
+                    background: rebeccapurple;
+                  }
+                </style>
+                ```
+            3. External stylesheet
+                ```html
+                <link rel="stylesheet" href="styles.css">
+                ```
+
+            ---
+
+            ## Selector Specificity
+            In _decreasing_ order of selector importance:
+            1. ID Selector
+            2. Classes, attributes and pseudo-classes
+            3. Elements and pseudo-elements
+
+            See the [Specificity Calculator](https://specificity.keegan.st/)
+
+            ---
+
+            ## Source order
+            When there's still a tie, the declaration that comes last in source order, wins.
+
+            ---
+
+            ## Inspecting the Cascade
+            When in doubt, inspect!
+
+            ![Screencap of the inspector](../assets/images/css/cascade-inspector.png)
+
+            The Inspector will order all declarations from highest to lowest precedence.
+
+            ---
+
+            ## Mobile-first Design
+            
+            ---
+
+            ## Terminology
+            <dl>
+              <dt>Responsive Design</dt>
+              <dd>Where a website or app serves the same content for all devices and responds to the user's behavior based on screen size, platform and orientation.</dd>
+              <dt>Breakpoint</dt>
+              <dd>The point at which the layout of a website "snaps" to another layout based on screen width or orientation.</dd>
+            </dl>
+
+            ---
+
+            ## Activity
+            ### Breakpoint Treasure Hunt
+            1. Count off each member in your Project 2 groups: 
+                - 1, 2, 3, 4...
+            2. Form new groups based on your number
+            3. Choose one or two large websites and ask the following questions:
+                - What are the differences between the mobile and desktop designs?
+                - When you change the screen width, how many breakpoints are there?
+
+            ---
+
+            ## Mobile-first vs Desktop-first
+            <dl>
+              <dt>Mobile-first Design (recommended)</dt>
+              <dd>When a designer builds a website for mobile and then adds more complex layouts for desktop with a <code>min-width</code> media query.</dd>
+              <dt>Desktop-first Design</dt>
+              <dd>When a designer builds a complex layout for desktop and then simplifies the layout on mobile screens with a <code>max-width</code> media query.</dd>
+            </dl>
+
+            ---
+
+            ## `@media` queries
+            [Media Queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/) are like if statements for CSS, based on some browser condition (i.e. screen width):
+
+            ```css
+            .container {
+              display: block;
+            }
+
+            @media screen and (min-width: 40em) {
+              /* screen is larger than 40em */
+              .container {
+                display: flex;
+              }
+            }
+            ```
+            This is a **mobile-first** media query: The mobile styles come first and are overridden when the screen is larger than `40em`;
+
+            ---
+
+            ### Resulting Breakpoint
+            Screen is narrower than `40em` (the default in a mobile-first design):
+            
+            ![Example of mobile navigation](../assets/images/css/media-narrow.png)
+
+            Screen is wider than `40em`:
+
+            ![Example of desktop navigation](../assets/images/css/media-wide.png)
+
+            ---
+            ### Hamburger menus
+            A common mobile pattern is to use a button toggle:
+
+            ![Example of open nav menu](../assets/images/css/toggle-open.png)
+
+            See: [Create a responsive navigation nav with no JS!](https://www.youtube.com/watch?v=8QKOaTYvYUA) by Kevin Powell
+
+            ---
+
+            ## Further Learning
+            - MDN: [Beginner's guide to media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries)
+            - Kevin Powell: [How to Take the Right Approach to Responsive Web Design](https://www.freecodecamp.org/news/taking-the-right-approach-to-responsive-web-design/)
+                - Companion video: [Are you writing responsive CSS the wrong way?](https://www.youtube.com/watch?v=0ohtVzCSHqs)
+            - Kevin Powell: [Create a responsive navigation nav with no JS!](https://www.youtube.com/watch?v=8QKOaTYvYUA)
+
+          </textarea>
+        </section>
+      </div>
+    </div>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight ]
+      });
+    </script>
+  </body>
+</html>
