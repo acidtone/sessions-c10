@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Callbacks and Events</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/theme/sky.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/monokai.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/atelier-forest.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.js"></script>
+  <style>
+    :root {
+      --r-heading-text-transform: small-caps;
+    }
+
+    body .reveal .slides {
+      font-size: 36px;
+      text-align: left;
+    }
+
+    body .reveal .slides h1 {
+      font-size: 3em;
+    }
+
+    body .reveal .slides h2 {
+      font-size: 2em;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-variant: small-caps;
+      text-align: center;
+    }
+
+    h1 code,
+    h2 code,
+    h3 code,
+    h4 code,
+    h5 code,
+    h6 code {
+      font-variant: initial;
+    }
+
+    dd {
+      margin-bottom: 2rem;
+    }
+
+    .reveal p>img {
+      display: block;
+      margin: auto;
+    }
+
+    .reveal pre code {
+      padding: 1rem;
+    }
+
+    .code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2.5rem;
+      white-space: nowrap;
+      color: grey;
+    }
+
+    .code strong {
+      color: black;
+    }
+
+    .code.no-bullet {
+      list-style: none;
+      padding-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+
+            ## Callbacks and Events
+            ### Running functions when something happens
+
+            ---
+
+            ### Terminology
+            <dl>
+              <dt>Callback function</dt>
+              <dd>A function that's passed to another function as an argument, to be invoked later.</dd>
+              <dt>Event</dt>
+              <dd>Some pre-defined trigger created by the user (button click), browser (data received), server (file requested), etc.</dd>              
+              <dt>Event listener</dt>
+              <dd>Listens for events so it can run pre-defined callback functions, often called event handlers.</dd>
+            </dl>
+
+            ---
+
+            ## Callback functions
+            Because functions are variables, one can be passed to another function as an argument, making it a callback function.
+
+            ```js
+            const greet = function() {
+              console.log('Hi!');
+            };
+
+            const sendInvite = function(callback) {
+              callback();
+            }
+
+            sendInvite(greet); // "Hi!"
+            ```
+
+            ---
+
+            ## But why use callbacks?
+            For example:
+            <dl>
+              <dt>For users</dt>
+              <dd><em>Mouse and keyboard</em> events: clicks, mouse movement, scolling, key down/up, etc</dd>
+              <dt>For browsers</dt>
+              <dd><em>Network and DOM</em> events: fetch requests, component rendering, state changes, etc.</dd>
+              <dt>For servers</dt>
+              <dd><em>Network and file access</em> events: receiving network requests, database queries, reading/writing files, etc.</dd>
+            </dl>
+            
+            ---
+
+            ## Exercise
+            ### Vanilla click handler
+
+            ---
+
+            ### Step 1
+            ## Create a handler function
+            This will be invoked for every button **click**:
+            ```js
+            const handleClick = () => {
+              console.log('Clicked!');
+            };
+            ```
+
+            A common convention is to name user input handlers after the event they're attached to:
+
+            - **`handleClick`**
+            - **`handleSubmit`**
+            - **`handlerScroll`**
+            
+            ---
+
+            ### Step 2
+            ## Create a button variable
+            We will attach our click handler to this button as a **callback**.
+
+            ```html
+            <body>
+              <button>Click Me!</button>
+            </body>
+            ```
+
+            ```js
+            // Create button variable
+            const button = document.querySelector('button');
+            ```
+
+            ---
+
+            ### Step 3
+            ## Add a click Listener to the button
+            
+            ### `Element.addEventListener`
+
+            ```js
+            // Create button variable
+            const button = document.querySelector('button');
+
+            // Add listener to variable
+            button.addEventListener('click', handleClick);
+            ```
+            Now, **`handleClick`** will run whenever **`button`** is clicked.
+
+            In React, you will use **`onClick`** or similar. React will use `addEventListener()` behind the scenes.
+
+            ---
+
+            ## Key Takeaways
+            - Listener callback functions are often named after the event they are attached to, like `handleClick`;
+            - You will often see Listeners defined with anonymous functions:
+                ```js
+                button.addEventListener('click', () => {
+                  console.log('Clicked!');
+                });
+                ```
+                - This is the same as defining **`handleClick`**, except we're skipping the variable naming step.
+
+            ---
+
+            ## Event Objects
+            The browser or server (or React) will usually invoke event handlers with pre-defined arguments, often call **event objects**.
+
+            These objects will contain useful information about the event that occurred.
+
+            ---
+
+            ## Mouse event objects
+            For example, you can access the screen coordinates of the cursor when the mouse was clicked:
+            ```js
+            const handleClick = (event) => {
+              console.log('x:', event.x);
+              console.log('y:', event.y);
+            };
+            ```
+            In Express, page request events will pre-define **`request`** and **`response`** event objects that provide useful HTTP information.
+
+            ---
+
+            ## Destructuring objects
+            A handy ES6 syntax for accessing specific properties:
+
+            Full object:
+            ```js
+            const handleClick = (event) => {
+              console.log('x:', event.x);
+              console.log('y:', event.y);
+            };
+            ```
+
+            Just the useful bits:
+            ```js
+            const handleClick = ({ x, y }) => {
+              console.log('x:', x);
+              console.log('y:', y);
+            };
+            ```
+
+            ---
+            
+            ## Further Resources 
+            - Read: [Function expressions](https://javascript.info/function-expressions) on Javascript.info
+            - Watch: Functions in [JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour](https://www.youtube.com/watch?v=W6NZfCO5SIk) by Mosh
+                - 39:41 [Functions](https://www.youtube.com/watch?v=W6NZfCO5SIk&t=2122s)
+                - 44:22 [Types of Functions](https://www.youtube.com/watch?v=W6NZfCO5SIk&t=2662s)
+            - MDN: 
+                - [`EventTarget.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+                - [Event Reference](https://developer.mozilla.org/en-US/docs/Web/Events)
+            - Watch: [Introduction to JavaScript Event Listeners](https://youtu.be/EaRrmOtPYTM) by Steve Griffith
+
+          </textarea>
+      </section>
+    </div>
+  </div>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [RevealMarkdown, RevealHighlight]
+    });
+  </script>
+</body>
+
+</html>

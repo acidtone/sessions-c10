@@ -76,3 +76,5 @@
     - [Beginner's guide to media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries)
   - [Inspecting the CSS Cascade using Firefox DevTools](https://www.youtube.com/watch?v=Sp9ZfSvpf7A)
   - Kevin Powell: [Are you writing responsive CSS the wrong way?](https://www.youtube.com/watch?v=0ohtVzCSHqs)
+
+### May 2, 2023 - JS Functions and Events

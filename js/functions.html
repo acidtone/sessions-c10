@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Functions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/theme/sky.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/monokai.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/atelier-forest.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.js"></script>
+  <style>
+    :root {
+      --r-heading-text-transform: small-caps;
+    }
+
+    body .reveal .slides {
+      font-size: 36px;
+      text-align: left;
+    }
+
+    body .reveal .slides h1 {
+      font-size: 3em;
+    }
+
+    body .reveal .slides h2 {
+      font-size: 2.5em;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-variant: small-caps;
+      text-align: center;
+    }
+
+    h1 code,
+    h2 code,
+    h3 code,
+    h4 code,
+    h5 code,
+    h6 code {
+      font-variant: initial;
+    }
+
+    dd {
+      margin-bottom: 2rem;
+    }
+
+    .reveal p>img {
+      display: block;
+      margin: auto;
+    }
+
+    .reveal pre code {
+      padding: 1rem;
+    }
+
+    .code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2.5rem;
+      white-space: nowrap;
+      color: grey;
+    }
+
+    .code strong {
+      color: black;
+    }
+
+    .code.no-bullet {
+      list-style: none;
+      padding-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+            ## Javascript Functions
+            ### Portable, Re-usable Code
+
+            ---
+
+            ## Why do we use functions?
+            1. To remove repetition by making code **re-usable**
+            2. To make code more **portable** and **sharable**
+            3. To make code **safer** by protecting variables
+            4. To **delay code execution** until an event happens
+
+            ---
+            ### Declaration vs Invocation
+
+            <dl>
+              <dt>Function declaration</dt>
+              <dd>When a function is first created like any other variable.</dd>
+              <dt>Function invocation</dt>
+              <dd>When a function is run with parentheses <strong><code>()</code></strong>.</dd>
+              <dt>First-class Function</dt>
+              <dd>In Javascript, a function is treated like a value and can be passed like any other variable.</dd>
+            </dl>
+
+            ---
+
+            ## Declaring functions
+            There are a few ways to declare functions that you will see online.
+            1. Function Statements
+            2. Function Expressions
+
+            ---
+
+            ## Function statement
+            A classic syntax common to many languages.
+
+            ```js
+            function greet() {
+              console.log('Hi!');
+            }
+            ```
+
+            ---
+
+            ## Function Expression
+
+            ### ES5
+            
+            ```js
+            const greet = function() {
+              console.log('Hi!');
+            };
+            ```
+
+            ### ES6 (Fat arrow)
+
+            ```js
+            const greet = () => {
+              console.log('Hi!');
+            }
+            ```
+
+            ---
+
+            ## Function invocation
+            Once a function has been defined, it an be invoked/called/run multiple times in your code.
+
+            ### Step 1: Declare the function
+            ```js
+            const greet = function(){
+              console.log('Hi!');
+            }
+            ```
+
+            ### Step 2: Invoke the function
+            ```js
+            greet(); // "Hi!"
+            ```
+
+            ---
+
+            ## Key Takeaways
+            - Code inside a function **does not** run when a function is declared.
+            - After declaration, a function is invoked by adding parentheses after the function name.
+            - If a function name is referenced **without** parentheses, it is being passed as a variable but is **not** invoked.
+
+            ---
+
+            ## Parameters vs Arguments
+            <dl>
+              <dt>Function Parameter</dt>
+              <dd>A <em>placeholder</em> for variables that a function will accept when invoked. Parameters are defined when the function is created.</dd>
+              <dt>Function Argument</dt>
+              <dd>The actual value passed to a function when it is invoked.</dd>
+            </dl>
+
+            ---
+
+            ## Example
+            
+            If a function is defined with **parameters** (i.e. `name`):
+
+            ```js
+            const greet = function(name) {
+              console.log(`Hi, ${name}!`);
+            }
+            ```
+
+            It's invoked with **arguments** (i.e. `"Tony"`):
+
+            ```js
+            greet('Tony'); // Hi, Tony!
+            ```
+
+            ---
+
+            ## Key Takeways
+            - _Parameter_ is used when _declaring_ a function. 
+            - _Argument_ is used when _invoking_ a function. 
+            - Javascript (by default) won't complain if you don't pass an argument when a parameter is defined.
+
+            ---
+
+            ## Return values
+            Functions can (optionally) return values when they are invoked using the `return` keyword.
+            
+            ```js
+            const greet = function() {
+              return 'Hi!';
+            }
+            
+            const greeting = greet(); // "Hi!"
+            ```
+
+            ---
+
+            ## Function Scope
+            Outside variables are available inside a function:
+            
+            ```js
+            const name = 'Tony';
+
+            const greet = function() {
+              console.log(`Hi, ${name}!`); // "Hi, Tony!"
+            }
+            
+            greet();
+            ```
+
+            Notice that **`name`** is **not** being passed as an argument.
+
+            Outside variables accessed from inside a function are called **closures**.
+
+            ---
+
+            But variables declared inside a function are private and are not available outside the function:
+
+            ```js
+            const greet = function() {
+              const name = 'Tony';
+
+              console.log(`Hi, ${name}!`); // "Hi, Tony!"
+            }
+            
+            greet();
+
+            console.log(name) // Syntax error
+            ```
+
+            ---
+
+            ## Pure functions
+            A function is considered "pure" if the function:
+            1. The only inputs are from defined parameters;
+            2. Has no side-effects: it makes no changes outside the function besides what it returns.
+            3. It's _deterministic_: given the same inputs, it always returns the same outputs.
+                - Example: a random number generator is not deterministic (usually)
+
+            ---
+
+            ## Exercise: Make a function
+            Refactor the following code into a pure function, **`squareNum`**, so that:
+            1. Accepts a number as an argument;
+            2. Returns the square of that number.
+            
+            ```js
+            const num = 4;
+            const numSquared = num * num;
+            console.log(numSquared);
+            ```
+
+            ---
+
+            ## Further Learning
+
+            Mozilla Developer Network
+            - [Functions - reusable blocks of code](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions)
+            - [Build your own function](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Build_your_own_function)
+            - [Function return values](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Return_values)
+
+            Videos by Steve Griffith
+            - [Introduction to Functions in JavaScript](https://youtu.be/W6QaDqud66Y)
+            - [JavaScript Function Parameters](https://youtu.be/dxbsN6_C5PI)
+            - [JavaScript Function Return Statements](https://youtu.be/qed2cjdF-30)
+
+          </textarea>
+      </section>
+    </div>
+  </div>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [RevealMarkdown, RevealHighlight]
+    });
+  </script>
+</body>
+
+</html>
