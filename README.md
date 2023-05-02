@@ -77,6 +77,7 @@
   - [Inspecting the CSS Cascade using Firefox DevTools](https://www.youtube.com/watch?v=Sp9ZfSvpf7A)
   - Kevin Powell: [Are you writing responsive CSS the wrong way?](https://www.youtube.com/watch?v=0ohtVzCSHqs)
 
+---
 ### May 2, 2023 - JS Functions and Events
 - Slides: 
     - [Basic Functions](https://acidtone.github.io/sessions-c10/js/functions.html)
