@@ -82,7 +82,7 @@
     - [Basic Functions](https://acidtone.github.io/sessions-c10/js/functions.html)
     - [JS Callbacks and Events](https://acidtone.github.io/sessions-c10/js/callbacks-events.html)
 - Sample Code:
-    - [Starter code](https://github.com/acidtone/dailies-c10/tree/main/2023-04-25-mobile-first)
+    - [Starter code](https://github.com/acidtone/dailies-c10/tree/main/2023-05-02-functions)
     - Exercise: [Refactor into pure functions](https://gist.github.com/acidtone/6b27ecd6f5cdb05e57f93a5f137dcb2f)
 - Resources:
     - Mozilla Developer Network
