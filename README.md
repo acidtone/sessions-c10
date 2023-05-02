@@ -78,3 +78,23 @@
   - Kevin Powell: [Are you writing responsive CSS the wrong way?](https://www.youtube.com/watch?v=0ohtVzCSHqs)
 
 ### May 2, 2023 - JS Functions and Events
+- Slides: 
+    - [Basic Functions](https://acidtone.github.io/sessions-c10/js/functions.html)
+    - [JS Callbacks and Events](https://acidtone.github.io/sessions-c10/js/callbacks-events.html)
+- Sample Code:
+    - [Starter code](https://github.com/acidtone/dailies-c10/tree/main/2023-04-25-mobile-first)
+    - Exercise: [Refactor into pure functions](https://gist.github.com/acidtone/6b27ecd6f5cdb05e57f93a5f137dcb2f)
+- Resources:
+    - Mozilla Developer Network
+        - [Functions - reusable blocks of code](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions)
+        - [Build your own function](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Build_your_own_function)
+        - [Function return values](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Return_values)
+
+    - Videos by Steve Griffith
+        - [Introduction to Functions in JavaScript](https://youtu.be/W6QaDqud66Y)
+        - [JavaScript Function Parameters](https://youtu.be/dxbsN6_C5PI)
+        - [JavaScript Function Return Statements](https://youtu.be/qed2cjdF-30)
+    - [Javascript the Weird Parts](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts) by Tony Alicea
+        - [59:58](https://youtu.be/Bv_5Zv5c-Ts?t=3598) - Function Invocation and The Execution Stack
+        - [1:15:52](https://youtu.be/Bv_5Zv5c-Ts?t=4552) - Scope Chain
+        - [1:37:35](https://youtu.be/Bv_5Zv5c-Ts?t=5855) - Asynchronous Callbacks
