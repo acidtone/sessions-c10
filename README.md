@@ -99,3 +99,8 @@
         - [59:58](https://youtu.be/Bv_5Zv5c-Ts?t=3598) - Function Invocation and The Execution Stack
         - [1:15:52](https://youtu.be/Bv_5Zv5c-Ts?t=4552) - Scope Chain
         - [1:37:35](https://youtu.be/Bv_5Zv5c-Ts?t=5855) - Asynchronous Callbacks
+---
+
+### May 11, 2023 - Expressions vs Statements
+- Slides: [Statements vs Expressions](https://acidtone.github.io/sessions-c10/js/expressions-vs-statements.html)
+- Resources: [Statements Vs. Expressions](https://www.joshwcomeau.com/javascript/statements-vs-expressions/) by Josh W Comeau
