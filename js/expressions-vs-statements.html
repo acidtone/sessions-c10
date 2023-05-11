@@ -262,7 +262,7 @@
 
             ---
 
-            ## 3. functions
+            ## 3. Functions
             A function is an expression if it returns a value with the `return` keyword:
 
             ```js
@@ -333,8 +333,60 @@
               <dd>A type of <strong>argument</strong>: a variable or value that serves as input for an operator.</dd>
             </dl>    
             
+            See: [Expressions and Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) on the MDN
+
+            ---
+
+            ### Operators by Operand Count
+            Remember: operands are just fancy function arguments.
+
+            <dl>
+              <dt>Unary</dt>
+              <dd>Accepts <strong>one</strong> argument from one side of the operator or the other.</dd>
+              <dt>Binary</dt>
+              <dd>Accepts <strong>two</strong> arguments from both sides of the operator.</dd>
+              <dt>Ternary</dt>
+              <dd>Accepts <strong>three</strong> arguments between the `?` and `:` symbols. There is only one ternary operator in Javascript.</dd>
+            </dl>
+
+            ---
+
+            ## Expressions in React
+            JSX will only accept _expressions_ inside the `{}`.
+            ```js
+            function Welcome(props) {
+              return <h1>Hello, {props.name}</h1>;
+            }
+            ```
+            - `if` statements are not allowed
+            - `for` statements are not allowed
+
             ---
             
+            ### Conditionals in React
+            But ternary operators are allowed because they're expressions!
+            ```js
+            function Welcome(props) {
+              return <h1>Hello, {props.name ? props.name : 'Friend'}</h1>;
+            }
+            ```
+
+            ---
+
+            ### Logical Shortcuts
+            A quirk of `&&` is it will return the left operand if it's `false` and the right operand if both are `true`.
+            ```js
+            function LoadingIndicator({ isLoading }) {
+              return (
+                <div>
+                  { isLoading && <p>Loading...</p> }
+                </div>
+              )
+            }
+            ```
+
+            ---
+
             ## Quiz Time
             How many expressions are there in each of the following examples? What is the final expression?
             
