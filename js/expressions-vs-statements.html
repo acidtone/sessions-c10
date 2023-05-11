@@ -1,89 +1,117 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Expressions vs Statements</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/theme/sky.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/monokai.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/atelier-forest.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.js"></script>
-    <style>
-      :root {
-        --r-heading-text-transform: small-caps;
-      }
-      body .reveal .slides {
-        font-size: 36px;
-        text-align: left;
-      }
 
-      body .reveal .slides h1 {
-        font-size: 3em;
-      }
+<head>
+  <title>Expressions vs Statements</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/theme/sky.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/monokai.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/atelier-forest.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.js"></script>
+  <style>
+    :root {
+      --r-heading-text-transform: small-caps;
+    }
 
-      body .reveal .slides h2 {
-        font-size: 2.5em;
-      }
+    body .reveal .slides {
+      font-size: 36px;
+      text-align: left;
+    }
 
-      h1, h2 {
-        text-align: center;
-      }
-      
-      h1, h2, h3, h4, h5, h6 {
-        font-variant: small-caps;
-        text-align: center;
-      }
-      h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
-        font-variant: initial;
-      }
-      
-      dd {
-        margin-bottom: 2rem;
-      }
+    body .reveal .slides h1 {
+      font-size: 3em;
+    }
 
-      .reveal p > img {
-        display: block;
-        margin: auto;
-      }
+    body .reveal .slides h2 {
+      font-size: 2.5em;
+    }
 
-      .reveal pre code {
-        padding: 1rem;
-      }
+    h1,
+    h2 {
+      text-align: center;
+    }
 
-      .code {
-        font-family:'Courier New', Courier, monospace;
-        font-size: 2.5rem;
-        white-space: nowrap;
-        color: grey;
-      }
-      .code strong {
-        color: black;
-      }
-      .code.no-bullet {
-        list-style: none;
-        padding-left: 0;
-      }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-variant: small-caps;
+      text-align: center;
+    }
 
-    </style>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section data-markdown>
-          <textarea data-template>
+    h1 code,
+    h2 code,
+    h3 code,
+    h4 code,
+    h5 code,
+    h6 code {
+      font-variant: initial;
+    }
+
+    dd {
+      margin-bottom: 2rem;
+    }
+
+    .reveal p>img {
+      display: block;
+      margin: auto;
+    }
+
+    .reveal pre code {
+      padding: 1rem;
+    }
+
+    .code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2.5rem;
+      white-space: nowrap;
+      color: grey;
+    }
+
+    .code strong {
+      color: black;
+    }
+
+    .code.no-bullet {
+      list-style: none;
+      padding-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
             ## Statements vs Expressions
             ### The basics of JS syntax
             See: [Statements Vs. Expressions](https://www.joshwcomeau.com/javascript/statements-vs-expressions/) by Josh W Comeau
+            
+            ---
+
+            ### Quiz Time
+            ## How many expressions are in this Statement?
+            ```js
+            string = string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+            ```
+
+            ## [![Quiz QR Code](../assets/images/qr-codes/expressions-quiz.png)](https://www.menti.com/alsytnob2h9d)
+
             ---
 
             ### Terminology
 
             <dl>
+              <dt>Statement</dt>
+              <dd>A an instruction for the computer to do something. A statement can contain multiple expressions (<a href="https://www.joshwcomeau.com/javascript/statements-vs-expressions/">source</a>).</dd>
               <dt>Expression</dt>
               <dd>Any piece of code that produces (returns) a value.</dd>
-              <dt>Statement</dt>
-              <dd>A JavaScript program is a sequence of statements. Each statement is an instruction for the computer to do something. A statement can contain multiple expressions (<a href="https://www.joshwcomeau.com/javascript/statements-vs-expressions/">source</a>).</dd>
             </dl>
 
             ---
@@ -202,8 +230,29 @@
 
             ---
 
-            ## Variables and Literals
-            Variables express the value that has been assigned to them:
+            ## Common Expressions in JS
+
+            ---
+
+            ## 1. Literals
+            Literals are the literal values we type when assigning variables, passing arguments, etc:
+            - Number: `7`
+            - String: `"My string"`
+            - Boolean: `true` or `false`
+            - etc
+
+            Literals express themselves:
+
+            ```js
+            '1'; // Expresses '1'
+            10; // Expresses 10
+            'Deadpool'; // Expresses 'Deadpool'
+            ```
+
+            ---
+
+            ## 2. Variables
+            Variables express the value that it has been assigned:
 
             ```js
             const num = 15;
@@ -211,29 +260,104 @@
             num; // expresses 15
             ```
 
-            Literals express themselves:
+            ---
+
+            ## 3. functions
+            A function is an expression if it returns a value with the `return` keyword:
 
             ```js
-            '1'; // Expresses '1'
-            10; // Expresses 10
-            'Deadpool' // Expresses 'Deadpool'
+            const greet = () => {
+              return "Hi!";
+            }
+
+            const greeting = greet(); // Hi!
+            ```
+
+            BUT, a function is NOT an expression if it doesn't return a value;
+
+            ```js
+            const greet = () => {
+              console.log("Hi!");
+            }
+
+            greet(); // Hi!
+            ```
+            
+            ---
+
+            ## Quiz Time
+            ### How many Expressions in this Statement?
+            ```js
+            const squareNum = (num) => {
+              const squared = num * num;
+
+              return squared;
+            }
             ```
 
             ---
 
-            ## Operators are expressions
-            ### (functions that return values)
+            ## 4. Method chains
+            <dl>
+              <dt>Method</dt>
+              <dd>Methods are functions defined inside an object.</dd>
+              <dt>Method chain</dt>
+              <dd>Method chaining happens when you want to call multiple functions using the same object and its reference.</dd>
+              <dt>Coercion</dt>
+              <dd>When a value of one data type is converted to another data type.</dd>
+            </dl>  
 
+            ---
+
+            ### Coercion example
+            Javascript provides string methods by converting simple strings in `String` objects.
+
+            ```js
+            string.charAt(0).toUpperCase()
+            ```
+
+            - Each method in this chain is an expression. 
+            - String values are expressed from left to right.
+            - Each string is coerced into a `String` object.
+            - Each method is accessed from that `String` object.
+
+            ---
+            
+            ## 5. Operators
+            ### (functions that return values)
+            
             <dl>
               <dt>Operator</dt>
               <dd>A type of <strong>function</strong>: a special symbol used to perform operations on operands (values and variables).</dd>
               <dt>Operand</dt>
               <dd>A type of <strong>argument</strong>: a variable or value that serves as input for an operator.</dd>
-            </dl>
+            </dl>    
+            
+            ---
+            
+            ## Quiz Time
+            How many expressions are there in each of the following examples? What is the final expression?
+            
+            `5 > 100`
 
+            `0 === "0"`
+
+            `1 == '1' && sleepy === 'false'`
+            
+            `!true`
+
+            `Math.random().toFixed(2)`
+            
             ---
 
             ## Order of Operations
+            ### Follow the bouncing ball
+            ```js
+            string = string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+            ```
+
+            ---
+
             When seeing a mix of operators it helps to know which order they are evaluated. 
 
             From first to last:
@@ -246,20 +370,34 @@
 
             ---
 
+            ## Final Quiz
+            ### Stump the Facilitators
+            1. Find an example of a (complex/tricky) JS statement online in tutorials, documentation, GitHub repos, etc
+            2. Paste the code in `#class-notes`
+                - Pro-tip: You can link to highlighted lines of code in GitHub code view.
+            3. Your facilitators will make guesses on:
+                - How many expressions there are, and
+                - Which order they will evaluate.
+
+            Place your bets!
+            
+            ---
+
             ## Further Learning
             - [Statements Vs. Expressions](https://www.joshwcomeau.com/javascript/statements-vs-expressions/) by Josh W Comeau
             - Stack Overflow: [Difference between a statement and an expression?](https://stackoverflow.com/questions/12703214/javascript-difference-between-a-statement-and-an-expression)
             - MDN: [Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table)
 
           </textarea>
-        </section>
-      </div>
+      </section>
     </div>
-    <script>
-      Reveal.initialize({
-        hash: true,
-        plugins: [ RevealMarkdown, RevealHighlight ]
-      });
-    </script>
-  </body>
+  </div>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [RevealMarkdown, RevealHighlight]
+    });
+  </script>
+</body>
+
 </html>
