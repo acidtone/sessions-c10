@@ -104,3 +104,28 @@
 ### May 11, 2023 - Expressions vs Statements
 - Slides: [Statements vs Expressions](https://acidtone.github.io/sessions-c10/js/expressions-vs-statements.html)
 - Resources: [Statements Vs. Expressions](https://www.joshwcomeau.com/javascript/statements-vs-expressions/) by Josh W Comeau
+
+---
+
+## May 16, 2023 - CSS CYO
+**Agenda**
+1. Open discussion: P2 and P3 CSS Challenges
+    - What CSS challenges did you encounter in Project 2?
+    - Do you foresee any challenges in Project 3 that CSS can help solve?
+2. Sticky Footers
+    - CSS Tricks: [Sticky Footer, Five Ways](https://css-tricks.com/couple-takes-sticky-footer/)
+3. CSS Grid Basics
+    - [Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+    - Videos: [Layout Land](https://www.youtube.com/c/LayoutLand) and [Mozilla Developer](https://www.youtube.com/MozillaDeveloper)
+        - [Flexbox vs. CSS Grid — Which is Better?](https://youtu.be/hs3piaN4b5I) by Jenn Simmons
+        - [Build a Classic Layout FAST in CSS Grid](https://youtu.be/KOvGeFUHAC0) by Miriam Suzanne
+            - You can stop watching @6:05; the rest describes an obscure way of doing the same thing (that you might like better).
+        - [Incredibly Easy Layouts with CSS Grid](https://youtu.be/tFKrK4eAiUQ) by Jenn Simmons
+
+    - Videos: [Grid by Example](https://gridbyexample.com) by Rachel Andrew
+        - [Defining a Grid](https://gridbyexample.com/video/series-define-a-grid/)
+        - [The `fr` unit](https://gridbyexample.com/video/series-the-fr-unit/)
+        - [Repeat Notation](https://gridbyexample.com/video/series-repeat/)
+        - [Introducing `minmax()`](https://gridbyexample.com/video/series-minmax/)
+4. Review - Media queries
+    - Slides: [Mobile-first Design](https://acidtone.github.io/sessions-c10/html-css/mobile-first-design.html)
