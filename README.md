@@ -114,6 +114,7 @@
     - Do you foresee any challenges in Project 3 that CSS can help solve?
 2. Sticky Footers
     - CSS Tricks: [Sticky Footer, Five Ways](https://css-tricks.com/couple-takes-sticky-footer/)
+    - [Sample code](https://github.com/acidtone/dailies-c10/tree/main/2023-05-16-css-cyo)
 3. CSS Grid Basics
     - [Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
     - Videos: [Layout Land](https://www.youtube.com/c/LayoutLand) and [Mozilla Developer](https://www.youtube.com/MozillaDeveloper)
