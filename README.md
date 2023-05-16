@@ -121,7 +121,6 @@
         - [Build a Classic Layout FAST in CSS Grid](https://youtu.be/KOvGeFUHAC0) by Miriam Suzanne
             - You can stop watching @6:05; the rest describes an obscure way of doing the same thing (that you might like better).
         - [Incredibly Easy Layouts with CSS Grid](https://youtu.be/tFKrK4eAiUQ) by Jenn Simmons
-
     - Videos: [Grid by Example](https://gridbyexample.com) by Rachel Andrew
         - [Defining a Grid](https://gridbyexample.com/video/series-define-a-grid/)
         - [The `fr` unit](https://gridbyexample.com/video/series-the-fr-unit/)
