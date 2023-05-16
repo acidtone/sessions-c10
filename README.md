@@ -126,5 +126,6 @@
         - [The `fr` unit](https://gridbyexample.com/video/series-the-fr-unit/)
         - [Repeat Notation](https://gridbyexample.com/video/series-repeat/)
         - [Introducing `minmax()`](https://gridbyexample.com/video/series-minmax/)
-4. Review - Media queries
+4. Review - Media queries (with a focus on Grid)
     - Slides: [Mobile-first Design](https://acidtone.github.io/sessions-c10/html-css/mobile-first-design.html)
+5. Fancy Features in CSS
