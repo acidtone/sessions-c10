@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Higher Order Methods</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/theme/sky.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/monokai.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/atelier-forest.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.js"></script>
+  <style>
+    :root {
+      --r-heading-text-transform: small-caps;
+    }
+
+    body .reveal .slides {
+      font-size: 36px;
+      text-align: left;
+    }
+
+    body .reveal .slides h1 {
+      font-size: 3em;
+    }
+
+    body .reveal .slides h2 {
+      font-size: 2.5em;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-variant: small-caps;
+      text-align: center;
+    }
+
+    h1 code,
+    h2 code,
+    h3 code,
+    h4 code,
+    h5 code,
+    h6 code {
+      font-variant: initial;
+    }
+
+    dd {
+      margin-bottom: 2rem;
+    }
+
+    .reveal p>img {
+      display: block;
+      margin: auto;
+    }
+
+    .reveal pre code {
+      padding: 1rem;
+    }
+
+    .code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2.5rem;
+      white-space: nowrap;
+      color: grey;
+    }
+
+    .code strong {
+      color: black;
+    }
+
+    .code.no-bullet {
+      list-style: none;
+      padding-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+            ## Higher Order Methods
+            ### `.map()`, `.filter()`, `.find()`
+            ### And More!
+
+            ---
+
+            ### Terminology
+            <dl>
+              <dt>Callback Function</dt>
+              <dd>A function that's passed to another function (or method) as an argument, to be invoked later.</dd>
+              <dt>Higher Order Function</dt>
+              <dd>A function that either accepts a function as an argument or returns a function as an expression.</dd>
+              <dt>Method</dt>
+              <dd>A function that is defined as a property of an object.</dd>       
+            </dl>
+
+            ---
+
+            ## `.map()` Example
+
+            ```js
+            const myArray = [1, 4, 9, 16];
+
+            // Pass a function to map
+            const newArray = myArray.map(x => x * 2);
+            
+            console.log(newArray);
+            // Expected output: Array [2, 8, 18, 32]
+            ```
+
+            ---
+            
+            ### Common higher order methods
+            - [`.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+            - [`.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+            - [`.find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
+            Less common and slightly more complicated
+            - [`.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+            - [`.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+            ---
+
+            ## `.map()`
+            **Accepts**: a callback function.
+            
+            **Returns**: a new array with the **same** number of items as the source array.
+
+            **It's callback function:**
+            - Accepts the current item in the array;
+            - Returns a value that is inserted as an item in the new array.
+            
+            ---
+
+            ## `.filter()`
+            **Accepts**: a callback function.
+            
+            **Returns**: a filtered array based on the source array.
+
+            **It's callback function:**
+            - Accepts the current item in the array;
+            - Returns a true or false.
+
+            ---
+
+            ## `.find()`
+            **Accepts**: a callback function.
+            
+            **Returns**: a single item from the source array.
+
+            **It's callback function:**
+            - Accepts the current item in the array;
+            - Returns a true or false.
+
+            ---
+
+            ### Where Do Array Methods Come From?
+            Arrays inherit useful **prototype** methods like `.map()` when they are **coerced** into objects.
+
+            ![Array prototypes in the web console](../assets/images/js/array-prototypes.png)
+
+            ---
+
+            ## Demystifying `.map()`
+            This code:
+            ```js
+            const newArray = myArray.map(x => x * 2);
+            ```
+
+            Is the short version of this code:
+            ```js
+            const handleItem = (item) => {
+              return item * 2;
+            }
+
+            const newArray = myArray.map(handleItem);
+            ```
+
+            ---
+
+            ## Breaking it down 
+            ```js
+            const handleItem = (item) => {
+              return item * 2;
+            }
+
+            const newArray = myArray.map(handleItem);
+            ```
+            `.map()` loops through each `item` in its array, and at each iteration:
+            1. `handleItem` is invoked;
+            2. `handleItem` accepts the current `item` as an argument;
+            3. `handleItem` returns a new value that is added to a new array;
+            4. At the end of the loop `map()` returns the new array.
+
+            ---
+
+            ## `.map()` as a Loop
+            This code does a similar job with `for...of` loop.
+
+            ```js
+            const myArray = [1, 4, 9, 16];
+
+            let newArray = [];
+
+            for (const item of myArray) {
+              newArray.push(item);
+            }
+
+            console.log(newArray)
+            // Expected output: Array [2, 8, 18, 32]
+
+            ```
+
+            ---
+
+            ### The Hidden Magic Behind `.map()`
+            ```js
+            /* Hidden magic */
+            let newArray = []; // array that's eventually returned
+
+            const mapFunction = (sourceArray, callback) => {
+              for (const item of sourceArray) {
+                newArray.push(callback(item));
+              }
+              return newArray;
+            }
+
+            /* Your code */
+            const myArray = [1, 4, 9, 16];
+
+            const myNewArray = mapFunction(myArray, item => item * 2);
+
+            console.log(myNewArray)
+            // Expected output: Array [2, 8, 18, 32]
+            ```
+
+            ---
+
+            ## Further Learning
+            **Articles/Videos**
+            - Article: [How to Use Filter, Map and Reduce for More Maintainable Code](https://www.freecodecamp.org/news/higher-order-functions-in-javascript-d9101f9cf528/)
+            - Video: [Higher Order Functions & Arrays](https://www.youtube.com/watch?v=rRgD1yVwIvE)
+
+            **MDN Documentation**
+            - [`Array.prototype.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+            - [`Array.prototype.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+            - [`Array.prototype.find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+            - [`Array.prototype.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+            - [`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+          </textarea>
+      </section>
+    </div>
+  </div>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [RevealMarkdown, RevealHighlight]
+    });
+  </script>
+</body>
+
+</html>
