@@ -130,3 +130,12 @@
 4. Review - Media queries (with a focus on Grid)
     - Slides: [Mobile-first Design](https://acidtone.github.io/sessions-c10/html-css/mobile-first-design.html)
 5. Fancy Features in CSS
+
+---
+
+## May 18, 2023 - `.map()`, `.filter()`, `.find()`
+- Slides: [Higher Order Methods](https://acidtone.github.io/sessions-c10/js/higher-order-methods.html)
+- [Example Code](https://github.com/acidtone/dailies-c10/tree/main/2023-05-18-map-filter-find)
+- Resources:
+    - Article: [How to Use Filter, Map and Reduce for More Maintainable Code](https://www.freecodecamp.org/news/higher-order-functions-in-javascript-d9101f9cf528/)
+    - Video: [Higher Order Functions & Arrays](https://www.youtube.com/watch?v=rRgD1yVwIvE)
