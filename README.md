@@ -139,3 +139,19 @@
 - Resources:
     - Article: [How to Use Filter, Map and Reduce for More Maintainable Code](https://www.freecodecamp.org/news/higher-order-functions-in-javascript-d9101f9cf528/)
     - Video: [Higher Order Functions & Arrays](https://www.youtube.com/watch?v=rRgD1yVwIvE)
+
+---
+
+## June 7, 2023 - CSS Motion
+- Slides: [CSS Motion](https://acidtone.github.io/sessions-c10/html-css/css-motion.html)
+- Sample Code
+    - [Starter code](https://github.com/acidtone/dailies-c10/tree/main/2023-06-07-css-motion)
+    - Codepen: [Fun with CSS Variables](https://codepen.io/acidtone/pen/VNNWKp)
+- Articles:
+    - [12 Principles of Animation](https://idearocketanimation.com/13721-12-principles-of-animation-gifs/)
+    - MDN Documentation: 
+        - [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) property
+        - [Using CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
+- Videos:
+    - Val Head: [Designing Meaningful Animation](https://www.youtube.com/watch?v=EUszcZNbtjs)
+    - Kevin Powell: [10 CSS animation tips and tricks](https://www.youtube.com/watch?v=y8-F5-2EIcg)

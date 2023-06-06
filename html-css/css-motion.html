@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS Motion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/theme/sky.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.1/reveal.js"></script>
+  <style>
+    :root {
+      --r-heading-text-transform: small-caps;
+    }
+
+    body .reveal .slides {
+      font-size: 36px;
+      text-align: left;
+    }
+
+    body .reveal .slides h1 {
+      font-size: 3em;
+    }
+
+    body .reveal .slides h2 {
+      font-size: 2em;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-variant: small-caps;
+      text-align: center;
+    }
+
+    h1 code,
+    h2 code,
+    h3 code,
+    h4 code,
+    h5 code,
+    h6 code {
+      font-variant: initial;
+    }
+
+    dd {
+      margin-bottom: 2rem;
+    }
+
+    .reveal p>img {
+      display: block;
+      margin: auto;
+    }
+
+    .reveal pre code {
+      padding: 1rem;
+    }
+
+    .code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2.5rem;
+      white-space: nowrap;
+      color: grey;
+    }
+
+    .code strong {
+      color: black;
+    }
+
+    .code.no-bullet {
+      list-style: none;
+      padding-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+            # CSS Motion
+            ## Transitions and Animations
+
+            ---
+
+            ## 12 Principles of Animation
+            1. Squash and Stretch
+            2. Anticipation
+            3. Staging
+            4. Straight Ahead Action and Pose-to-Pose
+            5. **Follow Through and Overlapping Action**
+            6. Ease In, Ease Out
+            7. Arcs
+            8. **Secondary Action**
+            9. **Timing and Spacing**
+            10. Exaggeration
+            11. Solid Drawing
+            12. Appeal
+
+
+            ---
+
+            ### Animation Principle
+            ## Timing and Spacing
+            Makes animated objects appear to obey the laws of physics
+
+            Establishes mood, emotion and reaction
+
+            ---
+
+            ## Timing = duration
+            ## Spacing = easing
+
+            ---
+
+            ## CSS Easing Keywords
+            - `linear`
+            - `ease`
+            - `ease-in`
+            - `ease-out`
+            - `ease-in-out`
+
+            But cubic bezier curves make everything better.
+
+            ---
+
+            ### Animation Principle
+            ## Follow Through
+            - Not everything comes to a stop at once
+            - Overshooting the target position
+
+            ---
+
+            ### Animation Principle
+            ## Secondary Action
+            - Supplementary action
+            - Reinforces and adds dimension
+            - Often exaggerates the action
+
+            ---
+
+            ## Tips and tricks
+            - Similar objects should animate in similar ways
+            - Entrance should inform exit
+                - Objects should leave the way they came in
+            - Match velocities
+
+            ---
+
+            ## CSS Transitions vs Animations
+
+            ---
+
+            ### CSS Transitions
+            - Need to be triggered.
+            - Can't be looped.
+            - The `transition` property can only animate from one value to another.
+            - Are very Javascript-friendly (consider using CSS Variables).
+            - Are hardware accelerated (i.e. they're faster)
+
+            ---
+
+            ### CSS Animations
+            - Don't need to triggered; they can just happen.
+            - Are totally okay being looped.
+            - `@keyframes` provide much more control and complexity than Transitions.
+            - Are not very Javascript-friendly.
+            - Can hurt page performance.
+
+            ---
+
+            ## Which One to Choose?
+            Go with a **CSS Transition** if:
+            - You need a from/to animation that is triggered by the user.
+            - You want to manipulate property values with JS.
+
+            Go with a **CSS Animation** if:
+            - It needs to be looped.
+            - You want it to start on page load.
+            - You need an effect that Transitions can't do. 
+
+            ---
+
+            ### When in doubt, use a CSS Transition
+
+            ---
+
+            ## What can't be animated
+            - `display` modes
+            - `visibility`
+            - `linear-gradient` and `radial-gradient`
+            - Any other properties that have discreet on/off behaviour
+
+            A common use case: use `opacity` for hiding/showing elements
+            ```css
+            div {
+              opacity: 1;
+              transition: opacity .25s
+            }
+            div.hidden {
+              opacity: 0;
+            }
+            ```
+
+            ---
+
+            ## Further Learning
+            Articles:
+            - [12 Principles of Animation](https://idearocketanimation.com/13721-12-principles-of-animation-gifs/)
+            - MDN Documentation: 
+                - [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) property
+                - [Using CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
+
+            Videos:
+            - Val Head: [Designing Meaningful Animation](https://www.youtube.com/watch?v=EUszcZNbtjs)
+            - Kevin Powell: [10 CSS animation tips and tricks](https://www.youtube.com/watch?v=y8-F5-2EIcg)
+
+
+          </textarea>
+      </section>
+    </div>
+  </div>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [RevealMarkdown, RevealHighlight]
+    });
+  </script>
+</body>
+
+</html>
