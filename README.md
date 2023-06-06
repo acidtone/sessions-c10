@@ -146,7 +146,11 @@
 - Slides: [CSS Motion](https://acidtone.github.io/sessions-c10/html-css/css-motion.html)
 - Sample Code
     - [Starter code](https://github.com/acidtone/dailies-c10/tree/main/2023-06-07-css-motion)
-    - Codepen: [Fun with CSS Variables](https://codepen.io/acidtone/pen/VNNWKp)
+    - Codepens:
+        - [Transition starter](https://codepen.io/acidtone/pen/GRwRowz)
+        - [Hamburger menu starter](https://codepen.io/acidtone/pen/ZEmEWzK)
+        - [Animated SVG hamburger icon](https://codepen.io/acidtone/pen/RwpEMxV)
+        - [Fun with CSS Variables](https://codepen.io/acidtone/pen/VNNWKp)
 - Articles:
     - [12 Principles of Animation](https://idearocketanimation.com/13721-12-principles-of-animation-gifs/)
     - MDN Documentation: 
