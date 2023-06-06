@@ -111,9 +111,8 @@
 
             ### Animation Principle
             ## Timing and Spacing
-            Makes animated objects appear to obey the laws of physics
-
-            Establishes mood, emotion and reaction
+            - Makes animated objects appear to obey the laws of physics
+            - Establishes mood, emotion and reaction
 
             ---
 
@@ -129,7 +128,7 @@
             - `ease-out`
             - `ease-in-out`
 
-            But cubic bezier curves make everything better.
+            But [cubic bezier curves](https://cubic-bezier.com/) make everything better.
 
             ---
 
@@ -142,7 +141,7 @@
 
             ### Animation Principle
             ## Secondary Action
-            - Supplementary action
+            - Provides supplementary action
             - Reinforces and adds dimension
             - Often exaggerates the action
 
@@ -153,6 +152,28 @@
             - Entrance should inform exit
                 - Objects should leave the way they came in
             - Match velocities
+
+            ---
+
+            ## Activity
+            ### What can you animate?
+            Using this [Starter Code](https://codepen.io/acidtone/pen/GRwRowz), try animating one or more of the following properties:
+            - `opacity`
+            - `width`
+            - `height`
+            - `position: absolute`
+                - `top`, `bottom`, `left`, `right`
+            - `transform: rotate()`
+
+            Or use your imagination!
+
+            ---
+
+            ## Live Code Challenge
+            ### Sliding Hamburger Menu
+            Using this [Starter Code](https://codepen.io/acidtone/pen/ZEmEWzK) try the following:
+            1. Have the menu slide in from the side with purpose and style
+            2. Replace the Menu button with this [animated hamburger icon](https://codepen.io/acidtone/pen/RwpEMxV)
 
             ---
 
@@ -200,10 +221,9 @@
             - `linear-gradient` and `radial-gradient`
             - Any other properties that have discreet on/off behaviour
 
-            A common use case: use `opacity` for hiding/showing elements
+            A common use case: use `opacity` for hiding/showing elements instead of `display:none`
             ```css
             div {
-              opacity: 1;
               transition: opacity .25s
             }
             div.hidden {
