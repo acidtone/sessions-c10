@@ -159,3 +159,18 @@
 - Videos:
     - Val Head: [Designing Meaningful Animation](https://www.youtube.com/watch?v=EUszcZNbtjs)
     - Kevin Powell: [10 CSS animation tips and tricks](https://www.youtube.com/watch?v=y8-F5-2EIcg)
+
+---
+
+## July 6, 2023 - Relational Databases
+- **Slides**: [Relational Databases and SQL](https://acidtone.github.io/sessions-c10/misc/relational-db-sql.html)
+- **Tools**:
+    - [Supabase](https://supabase.com/)
+    - [LucidCharts](https://www.lucidchart.com/pages/)
+- **Learning Resources**:
+    - [Summary - Relational Database Model](https://dev.to/lmolivera/everything-you-need-to-know-about-relational-databases-3ejl)
+    - IBM Technology: [What is a Relational Database?](https://www.youtube.com/watch?v=OqjJjpjDRLc)
+    - Free Code Camp: [SQL Tutorial - Full Database Course for Beginners](https://www.youtube.com/watch?v=HXV3zeQKqGY)
+        - [2:36] - [What is a Database?](https://www.youtube.com/watch?v=HXV3zeQKqGY&t=156s)
+        - [23:10] - [Tables & Keys](https://www.youtube.com/watch?v=HXV3zeQKqGY&t=1390s)
+        - [43:31] - [SQL Basics](https://www.youtube.com/watch?v=HXV3zeQKqGY&t=2611s)
