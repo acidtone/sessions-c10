@@ -2,6 +2,12 @@
 
 ---
 
+## July 18, 2023 - Contracting as a Web Developer
+- [**Slides**](https://acidtone.github.io/sessions-c10/misc/contracting.html)
+- Padlet: [Frequently Asked Questions](https://padlet.com/acidtone/friday-night-pints-contracting-as-software-developer-u3zotj3bww2kk1dd) from a previous event
+
+---
+
 ## July 6, 2023 - Relational Databases
 - **Slides**: [Relational Databases and SQL](https://acidtone.github.io/sessions-c10/misc/relational-db-sql.html)
 - **Tools**:
